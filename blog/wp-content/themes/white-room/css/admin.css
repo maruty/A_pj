@@ -1,0 +1,46 @@
+/**
+ * @author NetBusinessAgent
+ * @version 1.0.0
+ */
+
+/**
+ * .whiteroom-information
+ */
+
+.whiteroom-information {
+	background-color: #EAF6F8;
+	border: 1px solid #52CAF0;
+	border-radius: 5px;
+	margin: 0.83em 20px 0.83em 0;
+	padding: 10px 15px;
+}
+
+.whiteroom-information ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.whiteroom-information ul li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+/**
+ * whiteroom-header-image
+ */
+
+#whiteroom-header-image img {
+	height: auto;
+	max-width: 100%;
+}
+
+.whiteroom-header-image-hide {
+	display: none;
+}
+
+.whiteroom-header-image-show {
+	display: inline;
+}
+
