@@ -3,9 +3,9 @@
  * WP Multibyte Patch Japanese Locale Extension
  *
  * @package WP_Multibyte_Patch
- * @version 1.9
+ * @version 2.4
  * @author Seisuke Kuraishi <210pura@gmail.com>
- * @copyright Copyright (c) 2013 Seisuke Kuraishi, Tinybit Inc.
+ * @copyright Copyright (c) 2015 Seisuke Kuraishi, Tinybit Inc.
  * @license http://opensource.org/licenses/gpl-2.0.php GPLv2
  * @link http://eastcoder.com/code/wp-multibyte-patch/
  */
@@ -146,16 +146,18 @@ if ( class_exists( 'multibyte_patch' ) ) :
 		else
 			$url = $this->conf['admin_custom_css_url'];
 
-		wp_register_style( 'wpmp-admin-custom', $url, array(), false );
-		wp_enqueue_style( 'wpmp-admin-custom' );
+		wp_enqueue_style( 'wpmp-admin-custom', $url, array(), '20131223' );
 	}
 
 	function wp_trim_words( $text = '', $num_words = 110, $more = '', $original_text = '' ) {
-		if ( 'characters' != _x( 'words', 'word count: words or characters?' ) )
+		if (
+			$this->is_wp_required_version( '4.3-RC1' ) && 0 !== strpos( _x( 'words', 'Word count type. Do not translate!' ), 'characters' ) || 
+			!$this->is_wp_required_version( '4.3-RC1' ) && 'characters' != _x( 'words', 'word count: words or characters?' )
+		)
 			return $text;
 
 		// If the caller is wp_dashboard_recent_drafts()
-		if( false !== $this->conf['patch_dashboard_recent_drafts'] && 10 === $num_words && is_admin() && strpos( wp_debug_backtrace_summary(), 'wp_dashboard_recent_drafts' ) )
+		if ( false !== $this->conf['patch_dashboard_recent_drafts'] && 10 === $num_words && is_admin() && strpos( wp_debug_backtrace_summary(), 'wp_dashboard_recent_drafts' ) )
 			$num_words = $this->conf['dashboard_recent_drafts_mblength'];
 
 		$text = $original_text;
