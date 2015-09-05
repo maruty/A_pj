@@ -15,6 +15,7 @@ get_header(); ?>
 		<main id="main" role="main" class="col-9">
 			<?php if ( have_posts() ) : ?>
 				<div class="entries">
+						<p>いったんてすとしてまする！</p>
 					<?php while ( have_posts() ) : the_post(); ?>
 						<?php get_template_part( 'content' ); ?>
 					<?php endwhile; ?>
