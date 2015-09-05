@@ -9,7 +9,7 @@
 	<footer id="footer">
 		<div class="row">
 			<nav class="footer-nav col-12">
-			<p>ちょっとこっちもてすててすてすつえてててててて</p>
+			<p>ちょっとこっちfsfsdfsdfdsfもてすててすてすつえてててててて</p>
 				<?php
 				wp_nav_menu( array(
 					'theme_location' => 'footer-nav',
