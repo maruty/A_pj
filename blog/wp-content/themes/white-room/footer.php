@@ -9,6 +9,7 @@
 	<footer id="footer">
 		<div class="row">
 			<nav class="footer-nav col-12">
+			<p>origin2にいったかの確認テスト</p>
 			<p>ちょっとこっちfsfsdfsdfdsfもてすててすてすつえてててててて</p>
 				<?php
 				wp_nav_menu( array(
